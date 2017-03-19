@@ -21,7 +21,12 @@ cluster by just spawning a couple containers.
            -e HOST=<IP OR FQDN>
            landoop/fast-data-dev-connect-cluster
 
-For an example take a look in the `docker-compose.yml`.
+For an example take a look in the `docker-compose.yml`. It will spawn a fast-data-dev
+to act as the Kafka stack, 3 fast-data-dev-connect-cluster containers to form
+a Connect cluster and a Connect UI (at port 8000) for the cluster.
+
+For now this image is tied to landoop/fast-data-dev:latest, which is on CP3.1.2. In the
+future we may offer more versions.
 
 Things to look out for in configuration options:
 
