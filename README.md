@@ -23,7 +23,10 @@ cluster by just spawning a couple containers.
 
 For an example take a look in the `docker-compose.yml`. It will spawn a fast-data-dev
 to act as the Kafka stack, 3 fast-data-dev-connect-cluster containers to form
-a Connect cluster and a Connect UI (at port 8000) for the cluster.
+a Connect cluster and a Connect UI (at port 8000) for the cluster. Remember that
+Connect needs some time to populate the connectors, so you may have to wait a few
+minutes before they show up in the UI (when you press new). Also you can use
+fast-data-dev's 3030 port to inspect your schemas and topics.
 
 For now this image is tied to landoop/fast-data-dev:latest, which is on CP3.1.2. In the
 future we may offer more versions.
