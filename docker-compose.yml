@@ -2,14 +2,14 @@ version: '2'
 services:
   kafka-stack:
     # This will serve as our Kafka stack
-    image: landoop/fast-data-dev:latest
+    image: landoop/fast-data-dev:cp3.0.1
     environment:
       - FORWARDLOGS=0
       - RUNTESTS=0
     ports:
       - 3030:3030
   connect-node-1:
-    image: landoop/fast-data-dev-connect-cluster:latest
+    image: landoop/fast-data-dev-connect-cluster:cp3.0.1
     depends_on:
       - kafka-stack
     environment:
@@ -18,7 +18,7 @@ services:
       - ZK=kafka-stack:2181
       - SR=http://kafka-stack:8081
   connect-node-2:
-    image: landoop/fast-data-dev-connect-cluster:latest
+    image: landoop/fast-data-dev-connect-cluster:cp3.0.1
     depends_on:
       - kafka-stack
     environment:
@@ -27,7 +27,7 @@ services:
       - ZK=kafka-stack:2181
       - SR=http://kafka-stack:8081
   connect-node-3:
-    image: landoop/fast-data-dev-connect-cluster:latest
+    image: landoop/fast-data-dev-connect-cluster:cp3.0.1
     depends_on:
       - kafka-stack
     environment:
