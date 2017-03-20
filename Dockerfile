@@ -1,4 +1,4 @@
-FROM landoop/fast-data-dev:latest
+FROM landoop/fast-data-dev:cp3.1.2
 MAINTAINER Marios Andreopoulos <marios@landoop.com>
 
 ADD setup-and-run-connect-distributed.sh /usr/local/bin
