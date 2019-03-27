@@ -7,5 +7,5 @@ ADD supervisord.conf /etc/
 RUN chmod +x /usr/local/bin/setup-and-run-connect-distributed.sh
 
 EXPOSE 8083
-ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/usr/local/bin/setup-and-run-connect-distributed.sh"]
